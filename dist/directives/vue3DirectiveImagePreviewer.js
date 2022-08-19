@@ -7,11 +7,10 @@ export default {
     name: 'vDirectiveImagePreviewer',
     mounted: (binding) => {
         let { src } = binding;
-        let el = binding.__vnode.el;
-        el._clickHandler = handleClick({
+        binding._clickHandler = handleClick({
             src
         });
-        el.addEventListener('click', el._clickHandler);
+        binding.addEventListener('click', binding._clickHandler);
     },
 };
 const handleClick = ({ src: bindingSrc }) => {

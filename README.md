@@ -19,7 +19,7 @@ pnpm config set registry https://registry.npmjs.org/
 修改版本号
 复制directives里边的vue到dist里去
 tsc
-pnpm publish
+pnpm publish --no-git-checks
 
 
 ```
