@@ -7,7 +7,7 @@
 无任何多余参数
 例子：  
 
-## 能使用，简陋版
+## 能使用，简陋版[npmjs包地址](https://www.npmjs.com/package/vue3-directive-image-previewer)
 
 ## 打包步骤
 
