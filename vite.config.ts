@@ -1,7 +1,27 @@
+import Unocss from 'unocss/vite'
 import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import Vue from '@vitejs/plugin-vue'
+import { name } from './package.json'
+import libCss from 'vite-plugin-libcss';
 
-// https://vitejs.dev/config/
+
 export default defineConfig({
-  plugins: [vue()]
+	build: {
+		cssCodeSplit: true,
+		emptyOutDir: true,
+		lib: {
+			name,
+			entry: ['./src/index.ts'],
+			fileName: f => `index.${f}.js`
+		},
+		rollupOptions: {
+			external: ['vue'],
+			output: {
+				globals: {
+					vue: 'Vue'
+				}
+			}
+		}
+	},
+	plugins: [Vue(), Unocss(),libCss()]
 })

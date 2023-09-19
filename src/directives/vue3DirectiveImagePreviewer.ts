@@ -12,6 +12,8 @@ export default{
     name: 'vDirectiveImagePreviewer',
     mounted: (binding:ComponentOptions)=> {
         let {src} = binding
+        // binding.title='gggggggggg'
+        src = src
         binding._clickHandler = handleClick({
             src
         })
